@@ -37,5 +37,5 @@ override.tf.json
 terraform.rc
 .terraform
 .terraform.lock.hcl
-cloud-init-master.yaml
-cloud-init-worker.yaml
+# cloud-init-master.yaml
+# cloud-init-worker.yaml
