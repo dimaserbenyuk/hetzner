@@ -2,12 +2,12 @@ variable "hcloud_token" {
   sensitive = true
 }
 
-variable "hetzner_access_key" {
-  sensitive = true
-}
-variable "hetzner_secret_key" {
-  sensitive = true
-}
+# variable "hetzner_access_key" {
+#   sensitive = true
+# }
+# variable "hetzner_secret_key" {
+#   sensitive = true
+# }
 
 # variable "servers" {
 #   default = {

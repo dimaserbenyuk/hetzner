@@ -8,3 +8,7 @@ output "k3s_connect_command" {
   EOT
   description = "Command to connect to the K3s cluster."
 }
+
+output "network_id" {
+  value = hcloud_network.k3s_network.id
+}

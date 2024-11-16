@@ -20,7 +20,7 @@ resource "hcloud_server" "master-node" {
 }
 
 resource "hcloud_server" "worker-nodes" {
-  count = 3
+  count = 5
   name        = "worker-node-${count.index}"
   image       = "ubuntu-24.04"
   server_type = "cax11"
