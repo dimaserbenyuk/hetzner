@@ -15,7 +15,11 @@ resource "hcloud_server" "master-node" {
 
   user_data = file("${path.module}/cloud-init-master.yaml")
 
-
+    # Attach both firewalls to the master node
+  firewall_ids = [
+    hcloud_firewall.allow_ssh_http.id,
+    hcloud_firewall.allow_api_server.id
+  ]
   depends_on = [hcloud_network_subnet.private_subnets]
 }
 
@@ -33,6 +37,6 @@ resource "hcloud_server" "worker-nodes" {
     network_id = hcloud_network.k3s_network.id
   }
   user_data = file("${path.module}/cloud-init-worker.yaml")
-
+  firewall_ids = [hcloud_firewall.allow_ssh_http.id]
   depends_on = [hcloud_network_subnet.private_subnets, hcloud_server.master-node]
 }
