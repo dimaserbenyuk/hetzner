@@ -91,6 +91,17 @@ chmod 600 ~/.kube/k3s.yaml
 ```
 
 ```shell
+➜  hetzner git:(main) kubectl get nodes -o wide          
+NAME            STATUS   ROLES                  AGE     VERSION        INTERNAL-IP       EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION     CONTAINER-RUNTIME
+master1         Ready    control-plane,master   4h7m    v1.30.6+k3s1   78...163     <none>        Ubuntu 24.04.1 LTS   6.8.0-48-generic   containerd://1.7.22-k3s1
+worker-node-0   Ready    <none>                 3h54m   v1.30.6+k3s1   142....185   <none>        Ubuntu 24.04.1 LTS   6.8.0-48-generic   containerd://1.7.22-k3s1
+worker-node-1   Ready    <none>                 3h54m   v1.30.6+k3s1   49..16       <none>        Ubuntu 24.04.1 LTS   6.8.0-45-generic   containerd://1.7.22-k3s1
+worker-node-2   Ready    <none>                 3h54m   v1.30.6+k3s1   138....48    <none>        Ubuntu 24.04.1 LTS   6.8.0-45-generic   containerd://1.7.22-k3s1
+worker-node-3   Ready    <none>                 3h54m   v1.30.6+k3s1   23...147     <none>        Ubuntu 24.04.1 LTS   6.8.0-48-generic   containerd://1.7.22-k3s1
+worker-node-4   Ready    <none>                 3h54m   v1.30.6+k3s1   91....25     <none>        Ubuntu 24.04.1 LTS   6.8.0-45-generic   containerd://1.7.22-k3s1
+```
+
+```shell
 kubectl create secret generic hcloud \
   --from-literal=token=.... \
   --namespace=kube-system
