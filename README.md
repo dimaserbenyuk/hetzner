@@ -27,12 +27,6 @@ kubectl create secret generic hcloud \
   --from-literal=token=.... \
   --namespace=kube-system
 
-kubectl create secret generic hcloud \
-  --from-literal=token=p4wQK69Qm1f9oxBXHHqIA9ngqESHNjE5UgUV7jC2DDEQHYejSPHMPomcHui8P664 \
-  --from-literal=robot-user=root \
-  --from-literal=robot-password=root \
-  --from-literal=network="10.0.0.0/16" \
-  --namespace=kube-system
 
 sudo ip link delete flannel.1
 
